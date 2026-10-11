@@ -1,4 +1,4 @@
-# [Project Name]
+# Faíct
 
 > **Universal agent entry point.** Any agent reading this repository cold starts here.
 > This file is both orientation reference and onboarding orchestrator.
@@ -7,9 +7,9 @@
 
 ## What This Is
 
-This repository is built on the **Agentic-Agile Template** — a starter framework for teams adopting structured human-agent collaboration. It provides the process layer that makes agent partnerships repeatable: structured backlogs, spec-first stories, platform adapter context files, built-in governance, and continuous measurement.
+This repository is built on the **Agentic-Agile Template** — a starter framework for teams adopting structured human-agent collaboration. It provides the process layer that makes agent partnerships work at scale: decomposition, ownership, parallel execution, and measured integration.
 
-**This file (`AGENTS.md`) is the single canonical entry point for all AI coding agents.** Read it completely before taking any action in the repository. It detects which state the repository is in and routes you to the right starting point.
+**This file (`AGENTS.md`) is the single canonical entry point for all AI coding agents.** Read it completely before taking any action in the repository. It detects which state the repository is in and guides you through the appropriate entry path.
 
 ---
 
@@ -24,7 +24,7 @@ This repository is built on the **Agentic-Agile Template** — a starter framewo
 | `CONTRIBUTING.md` | Human contribution workflow and PR guidelines. |
 | `SECURITY.md` | Security policy and vulnerability reporting process. |
 | `mcp.json` | Example MCP server configuration for agent tooling. |
-| `platform-adapters/` | **Layered agent / tracker / CI-CD context.** Three sub-layers: `agent-tools/` (one adapter per AI agent), `issue-trackers/` (one per backlog system), `ci-cd/` (planned v2), plus `combos/` for pre-assembled stacks. |
+| `platform-adapters/` | **Layered agent / tracker / CI-CD context.** Three sub-layers: `agent-tools/` (one adapter per AI agent), `issue-trackers/` (one per backlog system), `ci-cd/` (planned v2). |
 | `docs/agent-surface-selection.md` | Guide to choosing the right agent surface for different task types. |
 | `docs/evaluation-framework.md` | Eight-dimension framework for measuring human-agent partnership effectiveness. |
 | `docs/epic-decomposition-example.md` | Worked example: decompose an epic into stories, assign file ownership, plan waves. |
@@ -40,13 +40,13 @@ You are an AI coding agent working within this repository. Your responsibilities
 
 In all states, apply these baseline behaviors:
 
-- **Read context first.** Locate and read your platform adapter in `platform-adapters/` before starting any task. Platform adapters contain project-specific context, coding conventions, build commands, and testing strategy.
+- **Read context first.** Locate and read your platform adapter in `platform-adapters/` before starting any task. Platform adapters contain project-specific context, coding conventions, build commands, and integration patterns.
 - **Respect scope.** Implement exactly what the story or task specifies. Do not add features not in scope. Do not modify files outside your assignment without explicit instruction.
 - **Ask before assuming.** When requirements are ambiguous, ask. Never guess on incomplete specifications.
 - **Keep changes minimal.** Prefer targeted, focused changes over broad refactoring unless the spec requires it.
 - **Follow conventions.** Consult `STYLE.md` for code style, commit format, and PR structure.
 
-**This role is additive.** You complement the human's judgment and domain knowledge. You do not replace it. At decision points where business context, stakeholder priorities, or architectural trade-offs are required, surface the question to the human rather than deciding unilaterally.
+**This role is additive.** You complement the human's judgment and domain knowledge. You do not replace it. At decision points where business context, stakeholder priorities, or architectural tradeoffs matter, the human leads.
 
 ---
 
@@ -60,11 +60,13 @@ Check the title of this file (the first `#` heading):
 
 | Condition | State | Action |
 |-----------|-------|--------|
-| Title still reads the template sentinel `[Project Name]` | **Template state** | Run the Guided Onboarding Dialogue below. Do not modify any files until the dialogue is complete. |
-| Title contains a real project name and you have a specific task | **Configured state** | Skip to Quick Start below. |
-| You are contributing to the template itself (not a derived project) | **Contributor state** | Read `CONTRIBUTING-AGENTS.md` before proceeding. |
+| Title is "Faíct" (real project name) and you have a specific task | **Configured state** | Skip to Quick Start below. |
+| Title still reads the template sentinel `[Project Name]` | **Template state** | Run the Guided Onboarding Dialogue. Do not modify any files until the dialogue is complete. |
+| You are contributing to the template itself (not this derived project) | **Contributor state** | Read `CONTRIBUTING-AGENTS.md` before proceeding. |
 
 ### Quick Start (Configured State)
+
+You are reading this in **configured state**. Follow these steps:
 
 1. Find your platform adapter: `platform-adapters/agent-tools/<your-tool>/`.
 2. Read the adapter completely — it contains project-specific context, build commands, and conventions.
@@ -72,6 +74,17 @@ Check the title of this file (the first `#` heading):
 4. Confirm you understand the scope before writing any code.
 5. Implement. Follow TDD when applicable: write a failing test first, then implement to pass.
 6. Self-review against acceptance criteria before signaling completion.
+
+### Project Context: Faíct
+
+**Project:** Faíct — An AI-assisted fact-checking application  
+**Course:** ODU CS 411W  
+**Primary Language:** Python  
+**Framework:** Flask  
+**Database:** SQLite (development), PostgreSQL (planned)  
+**Architecture:** Flask backend with HTML/Jinja frontend, SQLAlchemy ORM
+
+**Current Status:** Prototype phase with placeholder AI analysis and evidence retrieval
 
 ---
 
@@ -87,7 +100,7 @@ Check the title of this file (the first `#` heading):
 
 Say to the human:
 
-> "I'm reading this repository as a fresh agent. It's currently in **template state** — it hasn't been configured for a specific project yet. I'm going to walk you through a short setup that takes about 5 minutes. I'll ask you questions one at a time and apply your answers at the end.
+> "I'm reading this repository as a fresh agent. It's currently in **template state** — it hasn't been configured for a specific project yet. I'm going to walk you through a short setup that takes 5–10 minutes.
 >
 > At the end of this dialogue, I'll create two commits: first an exact copy of the template files as a baseline, then a second commit with your project customizations applied.
 >
@@ -140,7 +153,7 @@ Ask the following questions **one at a time**. Wait for each answer before askin
 
 **Input 5 — Contribution Framework (deferrable):**
 
-> "Do you have an existing contribution process, branching strategy, or workflow conventions you want agents to follow? If not, the template defaults in `CONTRIBUTING.md` will apply. You can skip this now."
+> "Do you have an existing contribution process, branching strategy, or workflow conventions you want agents to follow? If not, the template defaults in `CONTRIBUTING.md` will apply. You can skip this and fill it in later."
 
 *(Deferrable. Record 'template defaults' if skipped.)*
 
